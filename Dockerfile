@@ -1,0 +1,3 @@
+python-dotenv
+pandas
+numpypip
