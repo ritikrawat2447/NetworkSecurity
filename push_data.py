@@ -50,8 +50,8 @@ class NetworkDataExtract():
 
 if __name__=='__main__':
     FILE_PATH="Network_Data/phisingData.csv"
-    DATABASE="Ritik"
-    COLLECTION="NetwrokData"
+    DATABASE="RitikDB"
+    COLLECTION="NetworkData"
     networkobj = NetworkDataExtract()
     records = networkobj.cv_to_json_convertor(file_path=FILE_PATH)
     print(records)
