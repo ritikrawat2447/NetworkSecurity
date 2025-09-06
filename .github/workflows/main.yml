@@ -1,7 +1,7 @@
 name : workflow
 
 on :
-  psuh :
+  push :
     branch :
       - main
     paths-ignore:
