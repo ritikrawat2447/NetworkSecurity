@@ -24,7 +24,6 @@ from networksecurity.utils.main_utils.utils import load_object
 
 from networksecurity.utils.ml_utils.model.estimator import NetworkModel
 
-
 client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
 
 from networksecurity.constants.training_pipeline import DATA_INGESTION_COLLECTION_NAME
@@ -86,3 +85,5 @@ async def predict_route(request: Request,file: UploadFile = File(...)):
     
 if __name__=="__main__":
     app_run(app,host="0.0.0.0",port=8000)
+
+
