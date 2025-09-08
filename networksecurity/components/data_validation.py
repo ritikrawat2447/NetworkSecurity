@@ -79,9 +79,6 @@ class DataValidation:
             status=self.validate_number_of_columns(dataframe=train_dataframe)
             if not status:
                 error_message=f"Train dataframe does not contain all columns.\n"
-            status = self.validate_number_of_columns(dataframe=test_dataframe)
-            if not status:
-                error_message=f"Test dataframe does not contain all columns.\n"   
 
             ## lets check datadrift
             status=self.detect_dataset_drift(base_df=train_dataframe,current_df=test_dataframe)

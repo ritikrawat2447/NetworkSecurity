@@ -23,9 +23,9 @@ import dagshub
 import joblib
 dagshub.init(repo_owner='ritikrawat2447', repo_name='NetworkSecurity', mlflow=True)
 
-#os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/krishnaik06/networksecurity.mlflow"
-#os.environ["MLFLOW_TRACKING_USERNAME"]="krishnaik06"
-#os.environ["MLFLOW_TRACKING_PASSWORD"]="7104284f1bb44ece21e0e2adb4e36a250ae3251f"
+os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/ritikrawat2447/NetworkSecurity.mlflow"
+os.environ["MLFLOW_TRACKING_USERNAME"]="ritikrawat2447"
+os.environ["MLFLOW_TRACKING_PASSWORD"]="d6479a631b32f90c9bae4871bfe9b9e10957521a"
 
 class ModelTrainer:
     def __init__(self,model_trainer_config:ModelTrainerConfig,data_transformation_artifact:DataTransformationArtifact):
@@ -36,8 +36,8 @@ class ModelTrainer:
             raise NetworkSecurityException(e,sys)
         
     def track_mlflow(self,best_model,classificationmetric):
-        ## mlflow.set_registry_uri("https://dagshub.com/krishnaik06/networksecurity.mlflow")
-        ## tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
+        mlflow.set_registry_uri("https://dagshub.com/ritikrawat2447/networksecurity.mlflow")
+        tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
         with mlflow.start_run():
             f1_score=classificationmetric.f1_score
             precision_score=classificationmetric.precision_score
@@ -50,7 +50,7 @@ class ModelTrainer:
             mlflow.log_artifact("model.pkl")
 
             # Model registry does not work with file store
-            '''
+            
             if tracking_url_type_store != "file":
                 # Register the model
                 # There are other ways to use the Model Registry, which depends on the use case,
@@ -59,7 +59,7 @@ class ModelTrainer:
                 mlflow.sklearn.log_model(best_model, "model", registered_model_name=best_model)
             else:
                 mlflow.sklearn.log_model(best_model, "model")
-            '''
+            
     def train_model(self,X_train,y_train,x_test,y_test):
         models = {
                 "Random Forest": RandomForestClassifier(verbose=1),
