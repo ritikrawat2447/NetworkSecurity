@@ -64,6 +64,6 @@ The pipeline is designed to be **scalable, modular, and production-ready**, foll
 - Automated end-to-end ML pipeline with artifact management. 
 - Best model selected via GridSearchCV and logged in MLflow.
 - Deployment pipeline reduces manual intervention via CI/CD.
-- Deployed on AWS (EC2 + ECR + CI/CD). Demo link available on request
+- **Deployed on AWS (EC2 + ECR + CI/CD). Demo link available on request**
  
 ---
